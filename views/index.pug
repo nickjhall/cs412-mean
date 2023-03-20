@@ -1,1 +1,11 @@
-p Hello there!
+body
+    h1='Search for a movie!'
+    form(name="movieSearch" action='/ps4/promise', method='POST')
+        input(type='text' name='promise' placeholder='Movie title (promise)')
+        input(type='submit')
+    form(action='/ps4/async', method='POST')
+        input(type='text' name='promise' placeholder='Movie title (async)')
+        input(type='submit')
+    form(action='/ps4/callback', method='POST')
+        input(type='text' name='promise' placeholder='Movie title (callback)')
+        input(type='submit')
