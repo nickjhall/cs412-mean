@@ -31,7 +31,12 @@ routes.post('/async', async (req, res) => {
 });
 
 routes.post('/callback', (req, res) => {
-    res.render('index', {});
+    const queryTerms = encodeURIComponent(req.body.callback);
+    const url = 'https://api.themoviedb.org/3/search/movie?api_key=' + process.env.TMBD_KEY + "&query=" + queryTerms;
+    request({url: url, json: true}, (err, response, body) => {
+        console.log("Callback success");
+        res.render('results', {queryTerms: req.body.callback, movieData: body.results});
+    })
 });
 
 module.exports = routes;
