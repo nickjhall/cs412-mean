@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+
+<button (click)="getData()">Fetch popular movies</button>
+
+<div *ngIf="movies.length">
+  <li *ngFor="let movie of movies">
+    <b>{{movie.title}}</b>
+  </li>
+</div>
