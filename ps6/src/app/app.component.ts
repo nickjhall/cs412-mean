@@ -11,6 +11,6 @@ export class AppComponent {
   movies: any = []
 
   getData() {
-    this.movies = data.results//= data.results;
+    this.movies = data.results
   }
 }
