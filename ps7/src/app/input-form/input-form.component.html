@@ -1,1 +1,11 @@
-<p>input-form works!</p>
+<form (ngSubmit)="onSubmit()" #yearForm="ngForm">
+<div class="form-group">
+<input type="text" class="form-control" name="year" id="year" required minlength="1"
+       placeholder="Year" [(ngModel)]="model.year" #year="ngModel">
+  <div [hidden]="year.valid || year.pristine" class="jasmine-alert">Year is required</div>
+  <br>
+  <button type="submit" [disabled]="!yearForm.form.valid">Query</button>
+</div>
+</form>
+
+<div>{{model.year}}</div>

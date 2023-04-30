@@ -1,1 +1,8 @@
-<p>data-view works!</p>
+<div *ngIf="movies.length">
+  <h3>Results:</h3>
+  <div *ngIf="fromCache; else notCache">(Data from cache)</div>
+  <ng-template #notCache>(Data from API directly)</ng-template>
+  <li *ngFor="let movie of movies">
+    <b>{{movie.title}}</b>
+  </li>
+</div>

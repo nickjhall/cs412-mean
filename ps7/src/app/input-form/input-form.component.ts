@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./input-form.component.css']
 })
 export class InputFormComponent {
-
+  model = {year:''}
+  onSubmit() {
+    console.log('submitted!')
+  }
 }

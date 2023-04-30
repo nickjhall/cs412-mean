@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-data-view',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./data-view.component.css']
 })
 export class DataViewComponent {
-
+  @Input() movies: any = []
+  @Input() fromCache: boolean = false;
 }
