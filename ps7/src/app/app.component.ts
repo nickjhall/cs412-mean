@@ -10,12 +10,15 @@ export class AppComponent {
   title = 'Find the most popular movies in any year!';
 
   movies = []
+  fromCache: boolean | undefined
   constructor(private backend: BackendService) {
   }
   getData(year: string) {
     this.backend.callAPI(year)?.subscribe(
       response => {
-        this.movies = response['results'];
+        let movieData = response['movieData']
+        this.movies = movieData.results
+        this.fromCache = response['fromCache']
       }
     )
   }

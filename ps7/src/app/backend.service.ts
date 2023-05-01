@@ -13,7 +13,6 @@ export class BackendService {
     console.log('backend called')
     const headers = {'content-type': 'application/json'}
     const body = JSON.stringify({year: year})
-    let movies = []
     return this.http.post(backendEndpoint.url+'/getPopularMoviesFromYear', body, {'headers': headers})
   }
 }

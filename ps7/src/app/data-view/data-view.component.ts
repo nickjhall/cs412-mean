@@ -7,5 +7,5 @@ import {Component, Input} from '@angular/core';
 })
 export class DataViewComponent {
   @Input() movies: any = []
-  @Input() fromCache: boolean = false;
+  @Input() fromCache: boolean | undefined
 }
