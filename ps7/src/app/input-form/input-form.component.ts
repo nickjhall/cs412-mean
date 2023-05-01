@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
+
 
 @Component({
   selector: 'app-input-form',
@@ -7,7 +8,11 @@ import { Component } from '@angular/core';
 })
 export class InputFormComponent {
   model = {year:''}
+  @Output() getData: EventEmitter<string> = new EventEmitter()
+
+
   onSubmit() {
     console.log('submitted!')
+    this.getData.emit(this.model.year)
   }
 }
